@@ -17,22 +17,20 @@ uav = connect('127.0.0.1:14550', wait_ready=True)
 
 
 def takeoff(altitude):
-    while uav.is_armable:
-        print("UAV is armable.")
-        uav.mode = VehicleMode("GUIDED")
-        time.sleep(1)
-        print(f"UAV mode: {str(uav.mode)}")
-        uav.armed = True
-
-        while uav.armed is not True:
-            print("UAV is arming...")
-            time.sleep(1)
-        
-        print(f"UAV armed: {uav.armed}")
-        uav.simple_takeoff(altitude)
-        break
-    if uav.armed == False:
+    while uav.is_armable is not True:
         print("UAV is not armable!")
+        time.sleep(1)
+    print("UAV is armable.")
+    uav.mode = VehicleMode("GUIDED")
     time.sleep(1)
+    print(f"UAV mode: {str(uav.mode)}")
+
+    while uav.armed is not True:
+        print("UAV is arming...")
+        uav.armed = True
+        time.sleep(1)
+    
+    print(f"UAV armed: {uav.armed}")
+    uav.simple_takeoff(altitude)
 
 takeoff(20)
