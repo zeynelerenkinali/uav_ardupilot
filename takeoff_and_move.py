@@ -39,6 +39,6 @@ def takeoff(altitude):
 # And then trying to takeoff at the disarmed position.
 
 takeoff(10)
-print("Position is successfully accepted")
-position = LocationGlobalRelative(-35.36227792, 149.16508368, 30)
-uav.simple_goto(position)
+# print("Position is successfully accepted")
+# position = LocationGlobalRelative(-35.36227792, 149.16508368, 30)
+# uav.simple_goto(position)

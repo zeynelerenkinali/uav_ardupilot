@@ -1,7 +1,6 @@
 from dronekit import connect, VehicleMode , LocationGlobalRelative, Command
 from pymavlink import mavutil
 import time
-from pymavlink import mavutil
 
 uav = connect('127.0.0.1:14550', wait_ready=True)
 
