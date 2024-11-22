@@ -41,7 +41,7 @@ def takeoff(altitude):
     print("INFO: UAV successfull armed.")
 
     uav.simple_takeoff(altitude)
-    time.sleep(1)
+    time.sleep(2)
     
     while uav.location.global_relative_frame.alt <= altitude * 0.9:
         print("PROCESS: UAV is taking off.")

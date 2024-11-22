@@ -13,6 +13,7 @@ Algorithm
 #1
 uav = connect('127.0.0.1:14550', wait_ready=True)
 
+
 def takeoff(altitude):
     while uav.is_armable is not True:
         print("INFO: UAV is not armable.")
